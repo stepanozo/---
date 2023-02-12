@@ -1,0 +1,156 @@
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Bot .net core 6.0.exe
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Bot .net core 6.0.deps.json
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Bot .net core 6.0.runtimeconfig.json
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Bot .net core 6.0.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Bot .net core 6.0.pdb
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Binder.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Configuration.CommandLine.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Json.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Configuration.UserSecrets.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Physical.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Hosting.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Http.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Http.Polly.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Logging.Configuration.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Logging.Console.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Logging.Debug.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Logging.EventLog.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Logging.EventSource.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Polly.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Polly.Extensions.Http.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\System.Diagnostics.EventLog.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Telegram.Bot.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Telegram.Bots.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Telegram.Bots.Extensions.Polling.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.Messages.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\obj\Debug\net6.0\Bot .net core 6.0.csproj.AssemblyReference.cache
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\obj\Debug\net6.0\Bot .net core 6.0.GeneratedMSBuildEditorConfig.editorconfig
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\obj\Debug\net6.0\Bot .net core 6.0.AssemblyInfoInputs.cache
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\obj\Debug\net6.0\Bot .net core 6.0.AssemblyInfo.cs
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\obj\Debug\net6.0\Bot .net core 6.0.csproj.CoreCompileInputs.cache
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\obj\Debug\net6.0\Bot .net core 6.0.csproj.CopyComplete
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\obj\Debug\net6.0\Bot .net core 6.0.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\obj\Debug\net6.0\refint\Bot .net core 6.0.dll
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\obj\Debug\net6.0\Bot .net core 6.0.pdb
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\obj\Debug\net6.0\Bot .net core 6.0.genruntimeconfig.cache
+D:\Файлы C#\Bot .net 6.0\Bot .net core 6.0\Bot .net core 6.0\obj\Debug\net6.0\ref\Bot .net core 6.0.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Bot .net core 6.0.exe
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Bot .net core 6.0.deps.json
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Bot .net core 6.0.runtimeconfig.json
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Bot .net core 6.0.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Bot .net core 6.0.pdb
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Binder.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Configuration.CommandLine.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Json.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Configuration.UserSecrets.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Physical.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Hosting.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Http.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Http.Polly.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Logging.Configuration.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Logging.Console.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Logging.Debug.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Logging.EventLog.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Logging.EventSource.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Polly.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Polly.Extensions.Http.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\System.Diagnostics.EventLog.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Telegram.Bot.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Telegram.Bots.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\Telegram.Bots.Extensions.Polling.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.Messages.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\obj\Debug\net6.0\Bot .net core 6.0.csproj.AssemblyReference.cache
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\obj\Debug\net6.0\Bot .net core 6.0.GeneratedMSBuildEditorConfig.editorconfig
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\obj\Debug\net6.0\Bot .net core 6.0.AssemblyInfoInputs.cache
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\obj\Debug\net6.0\Bot .net core 6.0.AssemblyInfo.cs
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\obj\Debug\net6.0\Bot .net core 6.0.csproj.CoreCompileInputs.cache
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\obj\Debug\net6.0\Bot .net core 6.0.csproj.CopyComplete
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\obj\Debug\net6.0\Bot .net core 6.0.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\obj\Debug\net6.0\refint\Bot .net core 6.0.dll
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\obj\Debug\net6.0\Bot .net core 6.0.pdb
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\obj\Debug\net6.0\Bot .net core 6.0.genruntimeconfig.cache
+D:\Файлы C#\Бот-моделист\Bot .net core 6.0\Bot .net core 6.0\obj\Debug\net6.0\ref\Bot .net core 6.0.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Bot .net core 6.0.exe
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Bot .net core 6.0.deps.json
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Bot .net core 6.0.runtimeconfig.json
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Bot .net core 6.0.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Bot .net core 6.0.pdb
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Binder.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Configuration.CommandLine.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Json.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Configuration.UserSecrets.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Physical.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Hosting.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Http.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Http.Polly.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Logging.Configuration.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Logging.Console.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Logging.Debug.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Logging.EventLog.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Logging.EventSource.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Polly.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Polly.Extensions.Http.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\System.Diagnostics.EventLog.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Telegram.Bot.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Telegram.Bots.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\Telegram.Bots.Extensions.Polling.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.Messages.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\obj\Debug\net6.0\Bot .net core 6.0.csproj.AssemblyReference.cache
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\obj\Debug\net6.0\Bot .net core 6.0.GeneratedMSBuildEditorConfig.editorconfig
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\obj\Debug\net6.0\Bot .net core 6.0.AssemblyInfoInputs.cache
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\obj\Debug\net6.0\Bot .net core 6.0.AssemblyInfo.cs
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\obj\Debug\net6.0\Bot .net core 6.0.csproj.CoreCompileInputs.cache
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\obj\Debug\net6.0\Bot .net core 6.0.csproj.CopyComplete
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\obj\Debug\net6.0\Bot .net core 6.0.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\obj\Debug\net6.0\refint\Bot .net core 6.0.dll
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\obj\Debug\net6.0\Bot .net core 6.0.pdb
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\obj\Debug\net6.0\Bot .net core 6.0.genruntimeconfig.cache
+D:\Файлы C#\Бот-моделист\Бот-моделист\Bot .net core 6.0\obj\Debug\net6.0\ref\Bot .net core 6.0.dll
