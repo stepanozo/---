@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Telegram.Bot.Types.InputFiles;
 using Telegram.Bot.Types.ReplyMarkups;
+using Telegram.Bots.Http;
 
 namespace Бот_1
 {
@@ -12,16 +15,22 @@ namespace Бот_1
     internal class User
     {
         public bool photoSent;
+        public bool lightEditingRequest;
+        public bool firstEditing;
         public string destinationFilePath;
         public string photoHashName;
         public string photoName;
+        
 
 
         public User()
         {
             photoSent = false;
+            lightEditingRequest = false;
             destinationFilePath = "";
             photoHashName = "";
+            firstEditing = true;
+
     }
 
     }
@@ -30,9 +39,6 @@ namespace Бот_1
 
     internal static class Variables
     {
-        public static List<string> png = "89 50 4E 47".Split().ToList();
-        public static List<string> jpg = "FF D8 FF DB".Split().ToList();
-        public static List<string> jpeg = "FF D8 FF E0".Split().ToList();
 
         public static Process photoshop;
   
@@ -64,7 +70,19 @@ namespace Бот_1
                             {
                                 new KeyboardButton[] { "Обработка светлого танка"},
                                 new KeyboardButton[] { "Обработка тёмного танка"},
+                                new KeyboardButton[] { "Лёгкое редактирование"},
                                 new KeyboardButton[] { "Отмена"},
+                            })
+        {
+            ResizeKeyboard = true
+        };
+
+        public static ReplyKeyboardMarkup LightEditingKeyboard = new(
+                            new[]
+                            {
+                                new KeyboardButton[] { "Осветлить фон" , "Повысить контрастность" },
+                                new KeyboardButton[] { "Осветлить тени", "Смягчить блики"},
+                                new KeyboardButton[] { "Повысить резкость", "Отмена"},
                             })
         {
             ResizeKeyboard = true
@@ -73,6 +91,9 @@ namespace Бот_1
 
 
         public static Dictionary<long, User> usersDict = new Dictionary<long, User>();
+
+       
+        
 
     }
 
