@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DqmuTjksmtfHm/ZpCx6tzXDZ6zSzx57siXG0L7IWMw4AJbxpr3OP6vA8BFNmv6Be/F8TzwcvU3eQdPq8vsytWA==",
+  "dgSpecHash": "P+ZDPnOVNT7RcZ4T1nOt8oANq8H4WsqHPebLJ9/1wnHKUbGppkkb1QyWfl//8P2QmLKRVaFyFWpFjxWc165dLw==",
   "success": true,
-  "projectFilePath": "D:\\Файлы C#\\Бот-моделист\\Bot .net core 6.0\\Bot .net core 6.0\\Bot .net core 6.0.csproj",
+  "projectFilePath": "D:\\Файлы C#\\BOT NEW GEN\\Бот-моделист\\Bot .net core 6.0\\Bot .net core 6.0.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\чтепоноза\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.0\\microsoft.extensions.configuration.6.0.0.nupkg.sha512",
     "C:\\Users\\чтепоноза\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
@@ -41,7 +41,11 @@
     "C:\\Users\\чтепоноза\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
     "C:\\Users\\чтепоноза\\.nuget\\packages\\telegram.bot\\18.0.0\\telegram.bot.18.0.0.nupkg.sha512",
     "C:\\Users\\чтепоноза\\.nuget\\packages\\telegram.bots\\5.9.0\\telegram.bots.5.9.0.nupkg.sha512",
-    "C:\\Users\\чтепоноза\\.nuget\\packages\\telegram.bots.extensions.polling\\5.9.0\\telegram.bots.extensions.polling.5.9.0.nupkg.sha512"
+    "C:\\Users\\чтепоноза\\.nuget\\packages\\telegram.bots.extensions.polling\\5.9.0\\telegram.bots.extensions.polling.5.9.0.nupkg.sha512",
+    "C:\\Users\\чтепоноза\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.14\\microsoft.windowsdesktop.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\чтепоноза\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.14\\microsoft.netcore.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\чтепоноза\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.14\\microsoft.aspnetcore.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\чтепоноза\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.14\\microsoft.netcore.app.host.win-x64.6.0.14.nupkg.sha512"
   ],
   "logs": []
 }
