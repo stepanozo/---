@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bot_.net_core_6._0;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
@@ -13,36 +14,7 @@ using Telegram.Bots.Http;
 namespace Бот_1
 {
 
-    internal class User
-    {
-        public States state;
-        public string photoHashName; //Имя фотографии на компьютере бота вместе с .jpg
-        public string photoName; //Имя фотографии пользователя
-        public string destinationFilePath; //Путь, по которому сохранена фотография пользователя вместе с именем фотки и .jpg
-        public bool NewPhotoQuestion; //Когда задаётся вопрос о новой фотке, ставим на true;
-
-        public enum States //Состояния, в которых может находиться пользователь
-        {
-            AfterStart = 0, //Когда пользователь зарегистрирован и у него дефолтная клавиатура выбора помощи или модельки
-            DarkOrLight = 1, //Выбор между тёмной обработкой и светлой
-            LightEditChoice = 2, //Пользователь выбирает, как ему отредактировать фотографию легкой обработкой
-            ColorChoice = 3,
-            FilterChoice = 4,
-            NationChoice = 5,
-            DifficultyChoice = 6,
-            ClassChoice = 7
-
-
-        }
-
-        public User()
-        {
-            state = States.AfterStart;
-            NewPhotoQuestion = false;
-        }
-
-    }
-
+  
 
 
     internal static class Variables
@@ -240,18 +212,27 @@ namespace Бот_1
 
 
 
-                    });
-
-
-
-
-
-
+        });
 
 
         public static Dictionary<long, User> usersDict = new Dictionary<long, User>();
+
+        public static List<Model> Models = new List<Model>() {
+            new Model ("Waffenträger auf E 100", Model.Nations.Germany, Model.Difficulties.difficult, Model.Class.PT, FileLink: "https://ru-wotp.lesta.ru/dcont/fb/file/048_waffentrager_auf_e100_v10_(1).pdf", PictureLink: "https://ru-wotp.lesta.ru/dcont/fb/image/048_waffentrager_e100_(684x243)_01.png"),
+            new Model ("Waffenträger auf E 100", Model.Nations.Germany, Model.Difficulties.difficult, Model.Class.PT, FileLink: "https://ru-wotp.lesta.ru/dcont/fb/file/048_waffentrager_auf_e100_v10_(1).pdf", PictureLink: "https://ru-wotp.lesta.ru/dcont/fb/image/048_waffentrager_e100_(684x243)_01.png"),
+            new Model ("КВ-1Э", Model.Nations.USSR, Model.Difficulties.difficult, Model.Class.PT, FileLink: "https://ru-wotp.lesta.ru/dcont/fb/file/029_second_kv-1e.pdf", PictureLink: "https://ru-wotp.lesta.ru/dcont/fb/image/000_second_name_(684x243)_01.jpg"),
+            new Model ("Waffenträger auf E 100", Model.Nations.Germany, Model.Difficulties.difficult, Model.Class.PT, FileLink: "https://ru-wotp.lesta.ru/dcont/fb/file/048_waffentrager_auf_e100_v10_(1).pdf", PictureLink: "https://ru-wotp.lesta.ru/dcont/fb/image/048_waffentrager_e100_(684x243)_01.png"),
+            new Model ("Waffenträger auf E 100", Model.Nations.Germany, Model.Difficulties.difficult, Model.Class.PT, FileLink: "https://ru-wotp.lesta.ru/dcont/fb/file/048_waffentrager_auf_e100_v10_(1).pdf", PictureLink: "https://ru-wotp.lesta.ru/dcont/fb/image/048_waffentrager_e100_(684x243)_01.png"),
+            new Model ("pindos", Model.Nations.USA, Model.Difficulties.difficult, Model.Class.PT, FileLink: "https://ru-wotp.lesta.ru/dcont/fb/file/048_waffentrager_auf_e100_v10_(1).pdf", PictureLink: "https://ru-wotp.lesta.ru/dcont/fb/image/048_waffentrager_e100_(684x243)_01.png"),
+            new Model ("russky", Model.Nations.USSR, Model.Difficulties.difficult, Model.Class.PT, FileLink: "https://ru-wotp.lesta.ru/dcont/fb/file/048_waffentrager_auf_e100_v10_(1).pdf", PictureLink: "https://ru-wotp.lesta.ru/dcont/fb/image/048_waffentrager_e100_(684x243)_01.png"),
+            new Model ("Waffenträger auf E 100", Model.Nations.Germany, Model.Difficulties.difficult, Model.Class.PT, FileLink: "https://ru-wotp.lesta.ru/dcont/fb/file/048_waffentrager_auf_e100_v10_(1).pdf", PictureLink: "https://ru-wotp.lesta.ru/dcont/fb/image/048_waffentrager_e100_(684x243)_01.png"),
+            new Model ("Waffenträger auf E 100", Model.Nations.Germany, Model.Difficulties.difficult, Model.Class.PT, FileLink: "https://ru-wotp.lesta.ru/dcont/fb/file/048_waffentrager_auf_e100_v10_(1).pdf", PictureLink: "https://ru-wotp.lesta.ru/dcont/fb/image/048_waffentrager_e100_(684x243)_01.png"),
+        };
+
     }
 
+    
+   
        
         
 

@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Telegram.Bot;
-//using Telegram.Bot.Exceptions.Polling;
 using Telegram.Bot.Types.ReplyMarkups;
 using Telegram.Bot.Types.InputFiles;
 using System.Diagnostics;
@@ -15,15 +14,12 @@ using System.Runtime.InteropServices;
 using System.ComponentModel;
 using Telegram.Bots.Requests;
 using Telegram.Bots.Http;
-using Telegram.Bots.Types;
 using System.IO;
 using Telegram.Bot.Types;
+using Bot_.net_core_6._0;
 
 namespace Бот_1
 {
-
-
-
     internal class Program
     {
 
@@ -31,7 +27,7 @@ namespace Бот_1
         {
 
 
-            var client = new TelegramBotClient("");
+            var client = new TelegramBotClient("ВСТАВЬТЕ СЮДА ВАШ КЛЮЧ БОТА");
             Variables.photoshop = Process.Start(@"C:\Program Files\Adobe\Adobe Photoshop CS6 (64 Bit)\Photoshop.exe"); //@ нужно для использования недопустимых вещей в строке
 
             client.StartReceiving(Update, Error); //этих двух методов нет
@@ -63,6 +59,18 @@ namespace Бот_1
         {
             try
             {
+                List<Model>.Enumerator p = Variables.Models.GetEnumerator(); //по сути элемент списка, будем сейчас перебирать их
+
+                while (p.MoveNext()) //пока получается пройти по списку дальше, ищем модель с таким же именем, которое через callbackQuery.Data вернулось
+                {
+                    if (p.Current.name == callbackQuery.Data)
+                        break;
+                }
+
+                await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile(p.Current.PictureLink)); //Отправляем фото и файл по той ссылке, которая в объекте p.Сurrent лежит, то есть в том, который нашли по имени
+                await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile(p.Current.FileLink));
+
+                /*
                 switch (callbackQuery.Data)
                 {
                     case "КВ-1Э":
@@ -245,8 +253,8 @@ namespace Бот_1
                         await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/157/45020462.png"));
                         await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://ru-wotp.lesta.ru/dcont/fb/file/992_ml-20(152-mm)_v10.pdf"));
                         break;
-
-                }
+                
+                }*/
             }
             catch
             {
@@ -426,11 +434,11 @@ namespace Бот_1
             {
                 switch (message.Text)
                 {
-                    case "Обработка светлого танка":
+                    case "Обработка тёмного танка":
                         await EditModel("LightColorEdit.exe", botClient, message.Chat.Id, Variables.DarkOrLightKeyboard);
                         Variables.usersDict[message.Chat.Id].state = User.States.DarkOrLight;
                         break;
-                    case "Обработка тёмного танка":
+                    case "Обработка светлого танка":
                         await EditModel("ModelEdit.exe", botClient, message.Chat.Id, Variables.DarkOrLightKeyboard);
                         Variables.usersDict[message.Chat.Id].state = User.States.DarkOrLight;
 
@@ -595,58 +603,95 @@ namespace Бот_1
                         break;
 
                     default:
+                        return;
 
-                        break;
                 }
+                return;
             }
 
             if (Variables.usersDict[message.Chat.Id].state == User.States.NationChoice)
             {
+                Model.Nations nation = Model.Nations.USSR;
                 switch (message.Text)
                 {
                     case "СССР":
-                        await botClient.SendTextMessageAsync(message.Chat.Id, text: "Вот все советские танки: ", replyMarkup: Variables.USSR);
+                        nation = Model.Nations.USSR;
                         break;
                     case "Германия":
-                        await botClient.SendTextMessageAsync(message.Chat.Id, text: "Это демонстрационная версия, тут ничего не происходит и эта кнопка вообще не работает! Попробуйте танки СССР, они точно доступны.", replyMarkup: Variables.NationChoice);
+                        nation = Model.Nations.Germany;
                         break;
                     case "США":
-                        await botClient.SendTextMessageAsync(message.Chat.Id, text: "Это демонстрационная версия, тут ничего не происходит и эта кнопка вообще не работает! Попробуйте танки СССР, они точно доступны.", replyMarkup: Variables.NationChoice);
+                        nation = Model.Nations.USA;
                         break;
                     case "Франция":
-                        await botClient.SendTextMessageAsync(message.Chat.Id, text: "Это демонстрационная версия, тут ничего не происходит и эта кнопка вообще не работает! Попробуйте танки СССР, они точно доступны.", replyMarkup: Variables.NationChoice);
+                        nation = Model.Nations.France;
                         break;
                     case "Великобритания":
-                        await botClient.SendTextMessageAsync(message.Chat.Id, text: "Это демонстрационная версия, тут ничего не происходит и эта кнопка вообще не работает! Попробуйте танки СССР, они точно доступны.", replyMarkup: Variables.NationChoice);
+                        nation = Model.Nations.Britain;
                         break;
                     case "Швеция":
-                        await botClient.SendTextMessageAsync(message.Chat.Id, text: "Это демонстрационная версия, тут ничего не происходит и эта кнопка вообще не работает! Попробуйте танки СССР, они точно доступны.", replyMarkup: Variables.NationChoice);
+                        nation = Model.Nations.Sweden;
                         break;
                     case "Чехословакия":
-                        await botClient.SendTextMessageAsync(message.Chat.Id, text: "Это демонстрационная версия, тут ничего не происходит и эта кнопка вообще не работает! Попробуйте танки СССР, они точно доступны.", replyMarkup: Variables.NationChoice);
+                        nation = Model.Nations.Czechoslovakia;
                         break;
                     case "Италия":
-                        await botClient.SendTextMessageAsync(message.Chat.Id, text: "Это демонстрационная версия, тут ничего не происходит и эта кнопка вообще не работает! Попробуйте танки СССР, они точно доступны.", replyMarkup: Variables.NationChoice);
+                        nation = Model.Nations.Italy;
                         break;
                     case "Япония":
-                        await botClient.SendTextMessageAsync(message.Chat.Id, text: "Это демонстрационная версия, тут ничего не происходит и эта кнопка вообще не работает! Попробуйте танки СССР, они точно доступны.", replyMarkup: Variables.NationChoice);
+                        nation = Model.Nations.Japan;
                         break;
                     case "Китай":
-                        await botClient.SendTextMessageAsync(message.Chat.Id, text: "Это демонстрационная версия, тут ничего не происходит и эта кнопка вообще не работает! Попробуйте танки СССР, они точно доступны.", replyMarkup: Variables.NationChoice);
+                        nation = Model.Nations.China;
                         break;
                     case "Польша":
-                        await botClient.SendTextMessageAsync(message.Chat.Id, text: "Это демонстрационная версия, тут ничего не происходит и эта кнопка вообще не работает! Попробуйте танки СССР, они точно доступны.", replyMarkup: Variables.NationChoice);
+                        nation = Model.Nations.Poland;
                         break;
 
                     case "Отмена":
                         await botClient.SendTextMessageAsync(message.Chat.Id, text: "Выбор отменён", replyMarkup: Variables.FilterChoice);
                         Variables.usersDict[message.Chat.Id].state = User.States.FilterChoice;
-                        break;
+                        return;
 
                     default:
+                        return;
+                        
 
-                        break;
+
                 }
+                //Здесь мы формируем клавиатуру по выбранной нации, p - элемент списка моделей. Проходим через енумератор по списку, чтобы не вызывать по индексу. Ведь тогда придётся сто раз неявно пройти через весь список. А мы проходим только один раз благодаря енумератору.
+                List<List<InlineKeyboardButton>> germanButtonsList = new List<List<InlineKeyboardButton>>();// двумерный список кнопок
+                List<Model>.Enumerator p = Variables.Models.GetEnumerator(); //по сути элемент списка
+                bool endOfModelList = false;
+                int j = 0;
+                int i = 0;
+                while (!endOfModelList)
+                {
+                    germanButtonsList.Add(new List<InlineKeyboardButton>());
+                    i = 0;
+                    while (i < 3)
+                    {
+
+                        if (p.MoveNext()) //если получилось успешно перейти на следующий элемент
+                        {
+                            if (p.Current.nation == nation)
+                            {
+                                germanButtonsList[j].Add(InlineKeyboardButton.WithCallbackData(text: p.Current.name, callbackData: p.Current.name));
+                                i++;
+                            }
+                        }
+                        else
+                        {
+                            endOfModelList = true;
+                            break;
+                        }
+                    }
+                    j++;
+                }
+                var GermanyKeyboard = new InlineKeyboardMarkup(germanButtonsList);
+                await botClient.SendTextMessageAsync(message.Chat.Id, text: "Вот все танки по вашему запросу: ", replyMarkup: GermanyKeyboard);
+
+
             }
 
             if (Variables.usersDict[message.Chat.Id].state == User.States.ClassChoice)
