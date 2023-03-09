@@ -17,6 +17,8 @@ using Telegram.Bots.Http;
 using System.IO;
 using Telegram.Bot.Types;
 using Bot_.net_core_6._0;
+using System.Text.RegularExpressions;
+using System.Runtime.Versioning;
 
 namespace Бот_1
 {
@@ -27,7 +29,7 @@ namespace Бот_1
         {
 
 
-            var client = new TelegramBotClient("ВСТАВЬТЕ СЮДА ВАШ КЛЮЧ БОТА");
+            var client = new TelegramBotClient("5690602086:AAFaP56k6_TTMWN-gmpH6loROE4JG12BAzg");
             Variables.photoshop = Process.Start(@"C:\Program Files\Adobe\Adobe Photoshop CS6 (64 Bit)\Photoshop.exe"); //@ нужно для использования недопустимых вещей в строке
 
             client.StartReceiving(Update, Error); //этих двух методов нет
@@ -49,7 +51,7 @@ namespace Бот_1
             }
             else
             {
-             
+
                 await botClient.SendTextMessageAsync(chatId, text: "Изменение некуда откатывать! Бот хранит 1 старую версию фотографии, если было произведено хотя бы одно изменение.", replyMarkup: keyboardAfterProcess);
             }
         }
@@ -67,194 +69,24 @@ namespace Бот_1
                         break;
                 }
 
-                await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile(p.Current.PictureLink)); //Отправляем фото и файл по той ссылке, которая в объекте p.Сurrent лежит, то есть в том, который нашли по имени
-                await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile(p.Current.FileLink));
-
-                /*
-                switch (callbackQuery.Data)
+                try
                 {
-                    case "КВ-1Э":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://ru-wotp.lesta.ru/dcont/fb/image/000_second_name_(684x243)_01.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://ru-wotp.lesta.ru/dcont/fb/file/029_second_kv-1e.pdf"));
-                        break;
-                    case "КВ-1":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/190/61890767.png"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://ru-wotp.lesta.ru/dcont/fb/file/049_kv1_v10.pdf"));
-                        break;
-                    case "КВ-1 простой":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/188/63018849.png"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://ru-wotp.lesta.ru/dcont/fb/file/055_simple_kv1_v10.pdf"));
-                        break;
-                    case "Т-10М":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/153/98960428.png"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://ru-wotp.lesta.ru/dcont/fb/file/041_t-10m_v10.pdf"));
-                        break;
-                    case "Т-10М простой":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/153/98960428.png"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://ru-wotp.lesta.ru/dcont/fb/file/047_simple_t-10m_v10.pdf"));
-                        break;
-                    case "С-51":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/136/15085131.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://ru-wotp.lesta.ru/dcont/fb/file/042_simple_s-51_v10.pdf"));
-                        break;
-                    case "Т-100-ЛТ":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/128/93454318.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://ru-wotp.lesta.ru/dcont/fb/document/039_simple_t-100_lt_v10.pdf"));
-                        break;
-                    case "СУ-85 (СУ-122)":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/107/80851302.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://ru-wotp.lesta.ru/dcont/fb/document/02_su-85-122.pdf"));
-                        break;
-                    case "СУ-100":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/107/62346578.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://ru-wotp.lesta.ru/dcont/fb/document/01_simple_su-100_v10.pdf"));
-                        break;
-                    case "Гоночный БТ-СВ":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/105/62582113.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://ru-wotp.lesta.ru/dcont/fb/document/021_second_yellow_bt-sv_v10.pdf"));
-                        break;
-                    case "БТ-СВ простой":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://paper-models.ru/cache_images/cd/cdc37a1bde581c507803a06d96a7bad0_optimize.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://content-wg.gcdn.co/wot/files/006_simple_bt-sv_v10.pdf"));
-                        break;
-                    case "БТ-СВ":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/74/s25708512.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://content-wg.gcdn.co/wot/files/030_bt-sv_v10.pdf"));
-                        break;
-                    case "Объект 704":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/101/60398123.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://ru-wotp.lesta.ru/dcont/fb/document/029_simple_obj-704_v10.pdf"));
-                        break;
-                    case "СУ-122-54":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/83/26891213.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://content-wg.gcdn.co/wot/files/025_su-122-54_v10.pdf"));
-                        break;
-                    case "ИСУ-122":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/55/42215194.png"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://content-wg.gcdn.co/wot/files/012_second_isu-122_v10.pdf"));
-                        break;
-                    case "Т-44-100":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/55/24109417.png"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://content-wg.gcdn.co/wot/files/020_simple_t-44-100(p)_v10.pdf"));
-                        break;
-                    case "СУ-18":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/43/48599346.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://content-wg.gcdn.co/wot/files/017_simple_su-18_v10.pdf"));
-                        break;
-                    case "СУ-122-44":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/40/21261274.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://content-wg.gcdn.co/wot/files/008_second_su-122-44_v10.pdf"));
-                        break;
-                    case "А-44":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://paper-models.ru/cache_images/9c/9c6d672ae0c652be88873d518495a158_optimize.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://content-wg.gcdn.co/wot/files/016_simple_a-44_v10.pdf"));
-                        break;
-                    case "ИС-4М":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/21/88561304.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://ru-wotp.lesta.ru/dcont/fb/file/029_second_kv-1e.pdf"));
-                        break;
-                    case "ИС-4М простой":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/18/69959246.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://content-wg.gcdn.co/wot/files/007_simple_is-4_v10.pdf"));
-                        break;
-                    case "ИС-4М сложный":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://paper-models.ru/images/models-pub/wopt/front/005-2.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://content-wg.gcdn.co/wot/files/005_second_is-4m_v10.pdf"));
-                        break;
-                    case "Т-44-85/122":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://ru-wotp.lesta.ru/dcont/fb/image/011_second_t-44-85(122)(684x243)_01.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://content-wg.gcdn.co/wot/files/011_second_T-44-85(122)_v10.pdf"));
-                        break;
-                    case "ИС-2":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://paper-models.ru/cache_images/2f/2fb948c3c0b759e1c8c58639ba2bf311_optimize.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://content-wg.gcdn.co/wot/files/032_is-2_v10.pdf"));
-                        break;
-                    case "ИС-2 простой":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://paper-models.ru/images/models-pub/wopt/box/008-1.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://content-wg.gcdn.co/wot/files/007_simple_is-2_v10.pdf"));
-                        break;
-                    case "Т-34-85":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/201/53504644.png"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://content-wg.gcdn.co/wot/files/028_kv-122_hangar_v10.pdf"));
-                        break;
-                    case "КВ-122":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/73/45551584.png"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://ru-wotp.lesta.ru/dcont/fb/file/029_second_kv-1e.pdf"));
-                        break;
-                    case "КВ-122 простой":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/58/19767664.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://content-wg.gcdn.co/wot/files/004_simple_kv-122_v10.pdf"));
-                        break;
-                    case "«Панцер 50» трофейный":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/51/51368067.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://content-wg.gcdn.co/wot/files/009_second_e-50m_v10.pdf"));
-                        break;
-                    case "Бронешары":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/40/81730495.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://content-wg.gcdn.co/wot/files/997_spheroids_v10.pdf"));
-                        break;
-                    case "Т-54":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/97/40879991.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://ru-wotp.lesta.ru/dcont/fb/file/029_second_kv-1e.pdf"));
-                        break;
-                    case "Т-54 простой":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/97/23888357.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://tanki.su/dcont/fb/file/001_simple_t-54_v10.pdf"));
-                        break;
-                    case "Т-70 (Т-80)":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/40/56053320.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://tanki.su/dcont/fb/file/0243_t_70_80_v10.pdf"));
-                        break;
-                    case "ИСУ-152":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://paper-models.ru/cache_images/f7/f783e5b71a2191190043afa49c6f8cb8_optimize.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://tanki.su/dcont/fb/document/023_isu-152_v10.pdf"));
-                        break;
-                    case "ИС-3-БН":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://paper-models.ru/images/models-pub/wopt/maket/998-1.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://tanki.su/dcont/fb/file/998_is-3-bn_v10_2.pdf"));
-                        break;
-                    case "ИС-7":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/103/29558080.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://ru-wotp.lesta.ru/dcont/fb/file/029_second_kv-1e.pdf"));
-                        break;
-                    case "БТ-2":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/39/48536091.png"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://tanki.su/dcont/fb/media/models/bt_2/016_bt-2_v01.pdf"));
-                        break;
-                    case "Т-35А":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://paper-models.ru/cache_images/ba/ba8eb66139f3412191b9813d3f57e8bd_optimize.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://tanki.su/dcont/fb/media/models/t35a/015_t-35_v1_0.pdf?MEDIA_PREFIX=/dcont/fb/"));
-                        break;
-                    case "Т-34":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://paper-models.ru/images/models-pub/wopt/maket/013-1-1.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://tanki.su/dcont/fb/media/models/013_1_t-34_v1_0_new.pdf"));
-                        break;
-                    case "КВ-5":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/39/24567515.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://tanki.su/dcont/fb/media/models/kv5/011_kv-5_v1_0.pdf"));
-                        break;
-                    case "ИС-3":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://paper-models.ru/cache_images/63/63d7f97cf1061421cf0e393b5ac5e02c_optimize.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://tanki.su/dcont/fb/media/is-3/010_is-3_v1_0.pdf"));
-                        break;
-                    case "КВ-2":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/74/61452991.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://tanki.su/dcont/fb/media/models/008_kv-2/008_kv-2_v1_0.pdf"));
-                        break;
-                    case "СУ-26":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://paper-models.ru/cache_images/8f/8fc558bc913f0f72f2741b1e96d1ba84_optimize.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://tanki.su/dcont/fb/media/models/004_su-26/004_su-26_v1_1.pdf"));
-                        break;
-                    case "МС-1":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/11/35235470.jpg"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://tanki.su/dcont/fb/media/models/001_ms-1/001_ms-1_v1_1.pdf"));
-                        break;
-                    case "Пушка-гаубица МЛ-20":
-                        await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://only-paper.ru/_ld/157/45020462.png"));
-                        await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile("https://ru-wotp.lesta.ru/dcont/fb/file/992_ml-20(152-mm)_v10.pdf"));
-                        break;
-                
-                }*/
+                    await botClient.SendPhotoAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile(p.Current.PictureLink)); //Отправляем фото и файл по той ссылке, которая в объекте p.Сurrent лежит, то есть в том, который нашли по имени
+                }
+                catch
+                {
+                    await botClient.SendTextMessageAsync(callbackQuery.Message.Chat.Id, text: "По какой-то причине картинку загрузить не получилось. Извините.", replyMarkup: Variables.NationChoice);
+                }
+                try
+                {
+                    await botClient.SendDocumentAsync(callbackQuery.Message.Chat.Id, new InputOnlineFile(p.Current.FileLink));
+                }
+                catch
+                {
+                    await botClient.SendTextMessageAsync(callbackQuery.Message.Chat.Id, text: p.Current.FileLink, replyMarkup: Variables.NationChoice);
+                }
+
+             
             }
             catch
             {
@@ -263,14 +95,14 @@ namespace Бот_1
             return;
         }
 
-            static async Task EditModel(string editorName, ITelegramBotClient botClient, long chatId, ReplyKeyboardMarkup keyboardAfterProcess)
-       {
+        static async Task EditModel(string editorName, ITelegramBotClient botClient, long chatId, ReplyKeyboardMarkup keyboardAfterProcess)
+        {
             try
             {
-               //Делаем резервную старую версию фотки
-         
+                //Делаем резервную старую версию фотки
+
                 System.IO.File.Copy(@"C:\Users\чтепоноза\Desktop\Обработанные танки\Edited\" + Variables.usersDict[chatId].photoHashName, @"C:\Users\чтепоноза\Desktop\Обработанные танки\Edited\" + Variables.usersDict[chatId].photoHashName + "old.jpg", true);
-                
+
 
                 string destinationFilePath = @"C:\Users\чтепоноза\Desktop\Обработанные танки\Edited\" + Variables.usersDict[chatId].photoHashName;
                 Process processOfEditing = Process.Start(@"C:\Users\чтепоноза\Desktop\Обработанные танки\" + editorName, $@"""{destinationFilePath}""");
@@ -332,16 +164,16 @@ namespace Бот_1
             //это контент, который мы получаем
             var message = update.Message;
 
-            if(update.CallbackQuery != null)
-               await HandleCallbackQuery(botClient, update.CallbackQuery);
-            
+            if (update.CallbackQuery != null)
+                await HandleCallbackQuery(botClient, update.CallbackQuery);
+
 
             if (message == null)
                 return;
 
             if (!Variables.usersDict.ContainsKey(message.Chat.Id)) //Есть такой юзер или нет
             {
-              
+
                 Variables.usersDict[message.Chat.Id] = new User();
                 Console.WriteLine($"{message.Chat.FirstName} - зарегистрирован новый пользователь");
                 Console.WriteLine($"{message.Chat.FirstName} with id {message.Chat.Id} started the bot");
@@ -353,79 +185,79 @@ namespace Бот_1
 
             if (message.Photo != null) //Если пользователь прислал фото в сжатом качестве, просим прислать в виде документа
             {
-                await botClient.SendTextMessageAsync(message.Chat.Id, text: "Пожалуйста, отправьте файл в формате jpg без сжатия, в виде документа", replyMarkup: Variables.DefaultKeyboard);
+                await botClient.SendTextMessageAsync(message.Chat.Id, text: "Пожалуйста, отправьте файл в формате jpg без сжатия, в виде документа");
                 return;
             }
 
             if (message.Document != null) //Если пользователь реально прислал фото в виде документа
             {
-                    
 
-                        try
+
+                try
+                {
+                    await botClient.SendTextMessageAsync(message.Chat.Id, text: "Начинаем обработку новой фотографии.");
+                    if (System.IO.File.Exists(Variables.usersDict[message.Chat.Id].destinationFilePath))
+                        System.IO.File.Delete(Variables.usersDict[message.Chat.Id].destinationFilePath);
+                    if (System.IO.File.Exists(Variables.usersDict[message.Chat.Id].destinationFilePath + "old.jpg"))
+                        System.IO.File.Delete(Variables.usersDict[message.Chat.Id].destinationFilePath + "old.jpg");        //Удалим старую фотографию, и старую фотографию old тоже удалим.
+
+
+                    var fileId = update.Message.Document.FileId;        //Id файла получаем
+                    var fileInfo = await botClient.GetFileAsync(fileId); //Создаём переменную, в которой будет вся инфа по файлу.
+                    var filePath = fileInfo.FilePath;                      //Создаём переменную, в которую кладём путь к файлу
+
+                    Variables.usersDict[message.Chat.Id].photoName = message.Document.FileName;
+                    Variables.usersDict[message.Chat.Id].photoHashName = Convert.ToBase64String(Encoding.UTF8.GetBytes(Guid.NewGuid().ToString())).Remove(5) + ".jpg"; //создали крутой короткий хэш по гайду с ютуба.
+                    Variables.usersDict[message.Chat.Id].destinationFilePath = @"C:\Users\чтепоноза\Desktop\Обработанные танки\Edited\" + Variables.usersDict[message.Chat.Id].photoHashName;
+                    await using FileStream fileStream = System.IO.File.OpenWrite(Variables.usersDict[message.Chat.Id].destinationFilePath); //Открываем файловый поток туда, куда мы указали, то есть на наш новый файл
+                    await botClient.DownloadFileAsync(          //и сохраняем  туда наш файл
+                        filePath: filePath,
+                        destination: fileStream
+                        );
+                    fileStream.Close();     //после чего можно и нужно закрыть поток
+
+                    string fileHead = "";
+                    using (FileStream stream = System.IO.File.OpenRead(Variables.usersDict[message.Chat.Id].destinationFilePath))
+                    {
+                        for (int k = 0; k < 4; k++)
                         {
-                            await botClient.SendTextMessageAsync(message.Chat.Id, text: "Начинаем обработку новой фотографии.");
-                            if (System.IO.File.Exists(Variables.usersDict[message.Chat.Id].destinationFilePath))
-                                System.IO.File.Delete(Variables.usersDict[message.Chat.Id].destinationFilePath);
-                            if (System.IO.File.Exists(Variables.usersDict[message.Chat.Id].destinationFilePath + "old.jpg"))
-                                System.IO.File.Delete(Variables.usersDict[message.Chat.Id].destinationFilePath + "old.jpg");        //Удалим старую фотографию, и старую фотографию old тоже удалим.
-
-
-                            var fileId = update.Message.Document.FileId;        //Id файла получаем
-                            var fileInfo = await botClient.GetFileAsync(fileId); //Создаём переменную, в которой будет вся инфа по файлу.
-                            var filePath = fileInfo.FilePath;                      //Создаём переменную, в которую кладём путь к файлу
-
-                            Variables.usersDict[message.Chat.Id].photoName = message.Document.FileName;
-                            Variables.usersDict[message.Chat.Id].photoHashName = Convert.ToBase64String(Encoding.UTF8.GetBytes(Guid.NewGuid().ToString())).Remove(5) + ".jpg"; //создали крутой короткий хэш по гайду с ютуба.
-                            Variables.usersDict[message.Chat.Id].destinationFilePath = @"C:\Users\чтепоноза\Desktop\Обработанные танки\Edited\" + Variables.usersDict[message.Chat.Id].photoHashName;
-                            await using FileStream fileStream = System.IO.File.OpenWrite(Variables.usersDict[message.Chat.Id].destinationFilePath); //Открываем файловый поток туда, куда мы указали, то есть на наш новый файл
-                            await botClient.DownloadFileAsync(          //и сохраняем  туда наш файл
-                                filePath: filePath,
-                                destination: fileStream
-                                );
-                            fileStream.Close();     //после чего можно и нужно закрыть поток
-
-                            string fileHead = "";
-                            using (FileStream stream = System.IO.File.OpenRead(Variables.usersDict[message.Chat.Id].destinationFilePath))
-                            {
-                                for (int i = 0; i < 4; i++)
-                                {
-                                    string bit = stream.ReadByte().ToString("X2");
-                                    fileHead += bit;                          //Читаем по очереди 4 байта файла и записываем их в fileHead
-                                }
-                            }
-                            string type = "unknown format";
-
-                            if (fileHead == "FFD8FFDB" || fileHead == "FFD8FFE0" || fileHead == "FFD8FFEE" || fileHead == "FFD8FFE0" || fileHead == "FFD8FFE1")
-                            {
-                                type = ".jpg";
-                            }
-
-                            if (type == ".jpg")
-                            {
-
-                                Variables.usersDict[message.Chat.Id].state = User.States.DarkOrLight; //Задаём нужное состояние и выводим нужную клавиатуру
-                                await botClient.SendTextMessageAsync(message.Chat.Id, text: "Пожалуйста, выберите опцию обработки", replyMarkup: Variables.DarkOrLightKeyboard);
-                            }
-                            else
-                            {
-                                System.IO.File.Delete(Variables.usersDict[message.Chat.Id].destinationFilePath);
-                                await botClient.SendTextMessageAsync(message.Chat.Id, text: "Пожалуйста, отправьте файл в формате jpg без сжатия", replyMarkup: Variables.DefaultKeyboard);
-                            }
-                            return;
+                            string bit = stream.ReadByte().ToString("X2");
+                            fileHead += bit;                          //Читаем по очереди 4 байта файла и записываем их в fileHead
                         }
-                        catch (Exception e)
-                        {
+                    }
+                    string type = "unknown format";
 
-                            await botClient.SendTextMessageAsync(message.Chat.Id, text: "Что-то пошло не так, и вашу фотографию не получилось скачать. Попробуйте снова.", replyMarkup: Variables.DefaultKeyboard);
-                            Variables.usersDict[message.Chat.Id].state = User.States.AfterStart;
-                            Variables.usersDict[message.Chat.Id].photoName = "";
-                            Variables.usersDict[message.Chat.Id].photoHashName = ""; //обнуляем переменные при ошибке
-                            Variables.usersDict[message.Chat.Id].destinationFilePath = "";
-                            return;
-                        }
-                    
-                
-              
+                    if (fileHead == "FFD8FFDB" || fileHead == "FFD8FFE0" || fileHead == "FFD8FFEE" || fileHead == "FFD8FFE0" || fileHead == "FFD8FFE1")
+                    {
+                        type = ".jpg";
+                    }
+
+                    if (type == ".jpg")
+                    {
+
+                        Variables.usersDict[message.Chat.Id].state = User.States.DarkOrLight; //Задаём нужное состояние и выводим нужную клавиатуру
+                        await botClient.SendTextMessageAsync(message.Chat.Id, text: "Пожалуйста, выберите опцию обработки", replyMarkup: Variables.DarkOrLightKeyboard);
+                    }
+                    else
+                    {
+                        System.IO.File.Delete(Variables.usersDict[message.Chat.Id].destinationFilePath);
+                        await botClient.SendTextMessageAsync(message.Chat.Id, text: "Пожалуйста, отправьте файл в формате jpg без сжатия");
+                    }
+                    return;
+                }
+                catch (Exception e)
+                {
+
+                    await botClient.SendTextMessageAsync(message.Chat.Id, text: "Что-то пошло не так, и вашу фотографию не получилось скачать. Попробуйте снова.", replyMarkup: Variables.DefaultKeyboard);
+                    Variables.usersDict[message.Chat.Id].state = User.States.AfterStart;
+                    Variables.usersDict[message.Chat.Id].photoName = "";
+                    Variables.usersDict[message.Chat.Id].photoHashName = ""; //обнуляем переменные при ошибке
+                    Variables.usersDict[message.Chat.Id].destinationFilePath = "";
+                    return;
+                }
+
+
+
 
             }
 
@@ -453,9 +285,9 @@ namespace Бот_1
                         break;
 
                     case "Откатить изменение":
-                        
-                            await StepBackward(botClient, message.Chat.Id, Variables.DarkOrLightKeyboard);
-                        
+
+                        await StepBackward(botClient, message.Chat.Id, Variables.DarkOrLightKeyboard);
+
                         break;
 
                     case "Отмена":
@@ -468,7 +300,7 @@ namespace Бот_1
 
                     default:
 
-                        break;
+                        return;
                 }
                 return;
             }
@@ -512,7 +344,7 @@ namespace Бот_1
 
                     default:
 
-                        break;
+                        return;
                 }
             }
 
@@ -558,8 +390,7 @@ namespace Бот_1
                         break;
 
                     default:
-
-                        break;
+                        return;
                 }
             }
 
@@ -576,9 +407,9 @@ namespace Бот_1
                         break;
 
                     default:
-
-                        break;
+                        return;
                 }
+                return;
             }
 
             if (Variables.usersDict[message.Chat.Id].state == User.States.FilterChoice)
@@ -594,7 +425,8 @@ namespace Бот_1
                         Variables.usersDict[message.Chat.Id].state = User.States.ClassChoice;
                         break;
                     case "По сложности":
-                        await botClient.SendTextMessageAsync(message.Chat.Id, text: "Это демонстрационная версия, тут ничего не происходит и эта кнопка вообще не работает! Попробуйте танки СССР, они точно доступны.", replyMarkup: Variables.FilterChoice);
+                        await botClient.SendTextMessageAsync(message.Chat.Id, text: "Выберите сложность", replyMarkup: Variables.DifficultyChoice);
+                        Variables.usersDict[message.Chat.Id].state = User.States.DifficultyChoice;
                         break;
 
                     case "Отмена":
@@ -611,41 +443,41 @@ namespace Бот_1
 
             if (Variables.usersDict[message.Chat.Id].state == User.States.NationChoice)
             {
-                Model.Nations nation = Model.Nations.USSR;
-                switch (message.Text)
+                Model.Nations feature;
+                switch (message.Text) 
                 {
                     case "СССР":
-                        nation = Model.Nations.USSR;
+                        feature = Model.Nations.USSR;
                         break;
                     case "Германия":
-                        nation = Model.Nations.Germany;
+                        feature = Model.Nations.Germany;
                         break;
                     case "США":
-                        nation = Model.Nations.USA;
+                        feature = Model.Nations.USA;
                         break;
                     case "Франция":
-                        nation = Model.Nations.France;
+                        feature = Model.Nations.France;
                         break;
                     case "Великобритания":
-                        nation = Model.Nations.Britain;
+                        feature = Model.Nations.Britain;
                         break;
                     case "Швеция":
-                        nation = Model.Nations.Sweden;
+                        feature = Model.Nations.Sweden;
                         break;
                     case "Чехословакия":
-                        nation = Model.Nations.Czechoslovakia;
+                        feature = Model.Nations.Czechoslovakia;
                         break;
                     case "Италия":
-                        nation = Model.Nations.Italy;
+                        feature = Model.Nations.Italy;
                         break;
                     case "Япония":
-                        nation = Model.Nations.Japan;
+                        feature = Model.Nations.Japan;
                         break;
                     case "Китай":
-                        nation = Model.Nations.China;
+                        feature = Model.Nations.China;
                         break;
                     case "Польша":
-                        nation = Model.Nations.Poland;
+                        feature = Model.Nations.Poland;
                         break;
 
                     case "Отмена":
@@ -655,90 +487,232 @@ namespace Бот_1
 
                     default:
                         return;
-                        
+
 
 
                 }
-                //Здесь мы формируем клавиатуру по выбранной нации, p - элемент списка моделей. Проходим через енумератор по списку, чтобы не вызывать по индексу. Ведь тогда придётся сто раз неявно пройти через весь список. А мы проходим только один раз благодаря енумератору.
-                List<List<InlineKeyboardButton>> germanButtonsList = new List<List<InlineKeyboardButton>>();// двумерный список кнопок
-                List<Model>.Enumerator p = Variables.Models.GetEnumerator(); //по сути элемент списка
-                bool endOfModelList = false;
-                int j = 0;
-                int i = 0;
-                while (!endOfModelList)
-                {
-                    germanButtonsList.Add(new List<InlineKeyboardButton>());
-                    i = 0;
-                    while (i < 3)
-                    {
-
-                        if (p.MoveNext()) //если получилось успешно перейти на следующий элемент
-                        {
-                            if (p.Current.nation == nation)
-                            {
-                                germanButtonsList[j].Add(InlineKeyboardButton.WithCallbackData(text: p.Current.name, callbackData: p.Current.name));
-                                i++;
-                            }
-                        }
-                        else
-                        {
-                            endOfModelList = true;
-                            break;
-                        }
-                    }
-                    j++;
-                }
-                var GermanyKeyboard = new InlineKeyboardMarkup(germanButtonsList);
-                await botClient.SendTextMessageAsync(message.Chat.Id, text: "Вот все танки по вашему запросу: ", replyMarkup: GermanyKeyboard);
-
-
+                await ModelsKeyboardRequest(botClient, message.Chat.Id, feature); //Запрашиваем клавиатуру по выбранному признаку
+                return;
             }
 
             if (Variables.usersDict[message.Chat.Id].state == User.States.ClassChoice)
             {
+                Model.Class feature;
                 switch (message.Text)
                 {
                     case "Лёгкие танки":
-                        await botClient.SendTextMessageAsync(message.Chat.Id, text: "Это демонстрационная версия, тут ничего не происходит и эта кнопка вообще не работает! Попробуйте танки СССР, они точно доступны.", replyMarkup: Variables.ClassChoice);
+                        feature = Model.Class.light;
                         break;
                     case "Средние танки":
-                        await botClient.SendTextMessageAsync(message.Chat.Id, text: "Это демонстрационная версия, тут ничего не происходит и эта кнопка вообще не работает! Попробуйте танки СССР, они точно доступны.", replyMarkup: Variables.ClassChoice);
+                        feature = Model.Class.medium;
                         break;
                     case "Тяжёлые танки":
-                        await botClient.SendTextMessageAsync(message.Chat.Id, text: "Это демонстрационная версия, тут ничего не происходит и эта кнопка вообще не работает! Попробуйте танки СССР, они точно доступны.", replyMarkup: Variables.ClassChoice);
+                        feature = Model.Class.heavy;
                         break;
                     case "ПТ-САУ":
-                        await botClient.SendTextMessageAsync(message.Chat.Id, text: "Это демонстрационная версия, тут ничего не происходит и эта кнопка вообще не работает! Попробуйте танки СССР, они точно доступны.", replyMarkup: Variables.ClassChoice);
+                        feature = Model.Class.PT;
                         break;
                     case "САУ":
-                        await botClient.SendTextMessageAsync(message.Chat.Id, text: "Это демонстрационная версия, тут ничего не происходит и эта кнопка вообще не работает! Попробуйте танки СССР, они точно доступны.", replyMarkup: Variables.ClassChoice);
+                        feature = Model.Class.SAU;
                         break;
                     case "Диорамы":
-                        await botClient.SendTextMessageAsync(message.Chat.Id, text: "Это демонстрационная версия, тут ничего не происходит и эта кнопка вообще не работает! Попробуйте танки СССР, они точно доступны.", replyMarkup: Variables.ClassChoice);
+                        feature = Model.Class.diorama;
                         break;
 
                     case "Отмена":
                         await botClient.SendTextMessageAsync(message.Chat.Id, text: "Выбор отменён", replyMarkup: Variables.FilterChoice);
                         Variables.usersDict[message.Chat.Id].state = User.States.FilterChoice;
-                        break;
+                        return;
 
                     default:
-
-                        break;
+                        return;
                 }
+                await ModelsKeyboardRequest(botClient, message.Chat.Id, feature); //Запрашиваем клавиатуру по выбранному признаку
+                return;
             }
 
+            if (Variables.usersDict[message.Chat.Id].state == User.States.DifficultyChoice)
+            {
+                Model.Difficulties feature;
+                switch (message.Text)
+                {
+                    case "Низкая":
+                        feature = Model.Difficulties.light;
+                        break;
+                    case "Средняя":
+                        feature = Model.Difficulties.medium;
+                        break;
+                    case "Высокая":
+                        feature = Model.Difficulties.difficult;
+                        break;
+                    case "Очень высокая":
+                        feature = Model.Difficulties.difficultPlus;
+                        break;
+
+                    case "Отмена":
+                        await botClient.SendTextMessageAsync(message.Chat.Id, text: "Выбор отменён", replyMarkup: Variables.FilterChoice);
+                        Variables.usersDict[message.Chat.Id].state = User.States.FilterChoice;
+                        return;
+
+                    default:
+                        return;
+                }
+                await ModelsKeyboardRequest(botClient, message.Chat.Id, feature); //Запрашиваем клавиатуру по выбранному признаку
+            }
+            return;
+        }
+
+        // Три версии этой функции: для класса, для нации и для сложности модели. 
+        // Вообще хотелось бы как-нибудь одной обойтись и передавать туда переменную неопределённого типа просто, но я пока не знаю как это сделать. Ничего пока не выходит по этой части.
+        public static async Task ModelsKeyboardRequest(ITelegramBotClient botClient, long chatId, Model.Nations feature)
+        {
 
 
+            //Здесь мы формируем клавиатуру по выбранному признаку, p - элемент списка моделей. Проходим через енумератор по списку, чтобы не вызывать по индексу. Ведь тогда придётся сто раз неявно пройти через весь список. А мы проходим только один раз благодаря енумератору.
+            List<List<InlineKeyboardButton>> ButtonsList = new List<List<InlineKeyboardButton>>();// двумерный список кнопок
+            List<Model>.Enumerator p = Variables.Models.GetEnumerator(); //по сути элемент списка
+            bool endOfModelList = false;
+            int j = 0;
+            int i = 0;
+            while (!endOfModelList)
+            {
+                ButtonsList.Add(new List<InlineKeyboardButton>());
+                i = 0;
+                while (i < 3)
+                {
 
-
-
-
+                    if (p.MoveNext()) //если получилось успешно перейти на следующий элемент
+                    {
+                        if (FeatureMatch(p.Current, feature))
+                        {
+                            ButtonsList[j].Add(InlineKeyboardButton.WithCallbackData(text: p.Current.name, callbackData: p.Current.name));
+                            i++;
+                        }
+                    }
+                    else
+                    {
+                        endOfModelList = true;
+                        break;
+                    }
+                }
+                j++;
+            } //j просто успели на 1 как минимум повысить, так что небольшой костыльчик
+            if (j == 1 && i==0) //если ни одной кнопки не создали
+                await botClient.SendTextMessageAsync(chatId, text: "По вашему запросу ничего не нашлось. ");
+            else
+            {
+                var Keyboard = new InlineKeyboardMarkup(ButtonsList);
+                await botClient.SendTextMessageAsync(chatId, text: "Вот все танки по вашему запросу: ", replyMarkup: Keyboard);
+            }
+            return;
 
 
         }
 
-        private static Task Error(ITelegramBotClient arg1, Exception arg2, CancellationToken arg3)
+        public static async Task ModelsKeyboardRequest(ITelegramBotClient botClient, long chatId, Model.Class feature)
+        {
+
+
+            //Здесь мы формируем клавиатуру по выбраннjve ghbpyfre, p - элемент списка моделей. Проходим через енумератор по списку, чтобы не вызывать по индексу. Ведь тогда придётся сто раз неявно пройти через весь список. А мы проходим только один раз благодаря енумератору.
+            List<List<InlineKeyboardButton>> ButtonsList = new List<List<InlineKeyboardButton>>();// двумерный список кнопок
+            List<Model>.Enumerator p = Variables.Models.GetEnumerator(); //по сути элемент списка
+            bool endOfModelList = false;
+            int j = 0;
+            int i = 0;
+            while (!endOfModelList)
+            {
+                ButtonsList.Add(new List<InlineKeyboardButton>());
+                i = 0;
+                while (i < 3)
+                {
+
+                    if (p.MoveNext()) //если получилось успешно перейти на следующий элемент
+                    {
+                        if (FeatureMatch(p.Current, feature))
+                        {
+                            ButtonsList[j].Add(InlineKeyboardButton.WithCallbackData(text: p.Current.name, callbackData: p.Current.name));
+                            i++;
+                        }
+                    }
+                    else
+                    {
+                        endOfModelList = true;
+                        break;
+                    }
+                }
+                j++;
+            }
+            if (j == 1 && i == 0) //если ни одной кнопки не создали
+                await botClient.SendTextMessageAsync(chatId, text: "По вашему запросу ничего не нашлось. ");
+            else
+            {
+                var Keyboard = new InlineKeyboardMarkup(ButtonsList);
+                await botClient.SendTextMessageAsync(chatId, text: "Вот все танки по вашему запросу: ", replyMarkup: Keyboard);
+            }
+            return;
+
+
+        }
+
+        public static async Task ModelsKeyboardRequest(ITelegramBotClient botClient, long chatId, Model.Difficulties feature)
+        {
+
+
+            //Здесь мы формируем клавиатуру по выбраннjve ghbpyfre, p - элемент списка моделей. Проходим через енумератор по списку, чтобы не вызывать по индексу. Ведь тогда придётся сто раз неявно пройти через весь список. А мы проходим только один раз благодаря енумератору.
+            List<List<InlineKeyboardButton>> ButtonsList = new List<List<InlineKeyboardButton>>();// двумерный список кнопок
+            List<Model>.Enumerator p = Variables.Models.GetEnumerator(); //по сути элемент списка
+            bool endOfModelList = false;
+            int j = 0;
+            int i = 0;
+            while (!endOfModelList)
+            {
+                ButtonsList.Add(new List<InlineKeyboardButton>());
+                i = 0;
+                while (i < 3)
+                {
+
+                    if (p.MoveNext()) //если получилось успешно перейти на следующий элемент
+                    {
+                        if (FeatureMatch(p.Current, feature))
+                        {
+                            ButtonsList[j].Add(InlineKeyboardButton.WithCallbackData(text: p.Current.name, callbackData: p.Current.name));
+                            i++;
+                        }
+                    }
+                    else
+                    {
+                        endOfModelList = true;
+                        break;
+                    }
+                }
+                j++;
+            }
+            if (j == 1 && i==0) //если ни одной кнопки не создали
+                await botClient.SendTextMessageAsync(chatId, text: "По вашему запросу ничего не нашлось. ");
+            else
+            {
+                var Keyboard = new InlineKeyboardMarkup(ButtonsList);
+                await botClient.SendTextMessageAsync(chatId, text: "Вот все танки по вашему запросу: ", replyMarkup: Keyboard);
+            }
+            return;
+
+
+        }
+
+        static public bool FeatureMatch(Model model, Model.Nations nation)
+        {
+            return model.nation == nation;
+        }
+        static public bool FeatureMatch(Model model, Model.Class myClass)
+        {
+            return model.classOfModel == myClass;
+        }
+        static public bool FeatureMatch(Model model, Model.Difficulties difficulty)
+        {
+            return model.difficulty == difficulty;
+        }
+
+            private static Task Error(ITelegramBotClient arg1, Exception arg2, CancellationToken arg3)
         {
             throw new NotImplementedException();
         }
